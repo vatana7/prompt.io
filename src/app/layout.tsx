@@ -6,7 +6,7 @@ import '@/styles/globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Promptio',
+  title: 'Prompt.io',
   description: 'Prompt.io is a platform for creating and sharing prompts.',
 };
 
