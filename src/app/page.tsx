@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import Feed from '@/components/organism/Feed';
+import { Feed } from '@/components/organism';
 
 const Home = () => {
   return (

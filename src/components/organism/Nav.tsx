@@ -42,8 +42,6 @@ const Nav = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <button className="active:bg-red-500">TEst</button>
-
       <div className="sm:hidden flex dropdown dropdown-end">
         <label tabIndex={0} className="red-button m-1 text-black" onClick={() => setToggleDropDown(!toggleDropDown)}>
           Menu
@@ -63,7 +61,7 @@ const Nav = () => {
                   </Link>
                 </li>
                 <li>
-                  <button className="active:bg-red-500 text-sm focus:bg-red-500 hover:bg-red-500  hover:text-white transition-all ease-in-out duration-150">
+                  <button className="text-sm hover:bg-red-500 hover:text-white  transition-all ease-in-out duration-150">
                     Sign Out
                   </button>
                 </li>
