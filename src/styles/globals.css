@@ -7,6 +7,8 @@
   border-radius: 5px;
   border: none;
   color: black;
+  min-width: 6rem;
+  text-align: center;
   cursor: pointer;
   font-size: 0.95rem;
   transition: all 0.2s ease-in-out;
@@ -31,13 +33,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+*/
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
+
+  height: 100%;
+}

@@ -1,48 +1,43 @@
-import { User } from '@/app/models/user';
-import { connectToDB } from '@/utils/database';
-import NextAuth from 'next-auth/next';
-import GithubProvider from 'next-auth/providers/github';
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
+
+import { User } from "@/models/user";
+import { connectToDB } from "@/utils/database";
+connectToDB;
 
 const handler = NextAuth({
   providers: [
-    GithubProvider({
+    GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
   callbacks: {
     async session({ session }: any) {
-      const sessionUser = await User.findOne({
-        email: session.user?.email,
-      });
-
+      // store the user id from MongoDB to session
+      const sessionUser = await User.findOne({ email: session.user.email });
       session.user.id = sessionUser._id.toString();
 
       return session;
     },
-    async signIn({ profile }) {
+    async signIn({ profile }: any) {
       try {
         await connectToDB();
+        // check if user already exists
+        const userExists = await User.findOne({ email: profile.email });
 
-        if (profile !== undefined) {
-          //Check if user already exist
-          const userExist = await User.findOne({
+        // if not, create a new document and save user in MongoDB
+        if (!userExists) {
+          await User.create({
             email: profile.email,
+            username: profile.name.replace(" ", "").toLowerCase(),
+            image: profile.image,
           });
-
-          //If not, create user
-          if (!userExist) {
-            await User.create({
-              email: profile.email,
-              username: profile.name?.replace(' ', '').toLowerCase(),
-              image: profile.image,
-            });
-          }
         }
 
         return true;
       } catch (error) {
-        console.error(error);
+        console.log("Error checking if user exists: ", error);
         return false;
       }
     },
