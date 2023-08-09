@@ -45,7 +45,7 @@ const Nav = (): React.ReactNode => {
               </div>
               {session?.user?.image && (
                 <>
-                  <Link href={`/profile?username=${String(session?.user?.name).toLowerCase()}`}>
+                  <Link href={`/profile?username=${String(session?.user?.name).replace(" ", "").toLowerCase()}`}>
                     <Image
                       src={session?.user?.image}
                       alt="profile-image"
@@ -59,7 +59,7 @@ const Nav = (): React.ReactNode => {
             </>
           </Then>
           <Else>
-            <button className="red-button" onClick={() => signIn()}>
+            <button className="red-button" onClick={() => signIn("google")}>
               Sign In
             </button>
           </Else>
@@ -77,7 +77,7 @@ const Nav = (): React.ReactNode => {
               <Then>
                 <li>
                   <Link
-                    href={`/profile?username=${String(session?.user?.name).toLowerCase()}`}
+                    href={`/profile?username=${String(session?.user?.name).replace(" ", "").toLowerCase()}`}
                     className="hover:text-red-500"
                   >
                     My Profile
@@ -99,7 +99,7 @@ const Nav = (): React.ReactNode => {
               </Then>
               <Else>
                 <li>
-                  <button className="hover:text-red-500 text-sm" onClick={() => signIn()}>
+                  <button className="hover:text-red-500 text-sm" onClick={() => signIn("google")}>
                     Sign In
                   </button>
                 </li>
