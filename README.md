@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+> _I have worked on this project on a short period of time so that I can learn about how NextJS work overall. It was a fun experience and I'm super happy with the result._
 
-## Getting Started
+#### Introduction
 
-First, run the development server:
+Prompt.io is a place where people can upload and explore other people AI prompts!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+**Features**
+<small>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Upload your own prompts<br/>
+- Explore other people prompts <br/>
+- Create, edit, and delete your own prompts <br/>
+- Authentication with Google using NextAuth.js <br/>
+- Search for prompts by user, description, or tags <br/>
+- Copy and paste prompts to clipboard<br/>
+- Website is mobile friendly
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+</small>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Frameworks**
 
-## Learn More
+- [Next.JS](https://nextjs.org/) – React framework for building performant apps with the best developer experience
+- [NextAuth.js](https://next-auth.js.org/) – Handle user authentication with ease with providers like Google, Twitter, GitHub, etc.
 
-To learn more about Next.js, take a look at the following resources:
+**Platforms**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Vercel](https://vercel.com/) – Easily preview & deploy changes with git
+- [MongoDb](https://www.mongodb.com/) - Database for storing user data and prompts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**UI**
 
-## Deploy on Vercel
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for rapid UI development
+- [DaisyUi](https://daisyui.com/) – Component library for Tailwind CSS
+- [React SVG Icon](https://reactsvgicons.com/) – Beautifully simple, pixel-perfect icons
+- [react-if] – Simple React component that makes if else statement on React component more readable
+- [react-content-loader](https://skeletonreact.com/) - SVG component to create placeholder loading, like Facebook cards loading or also known as skeleton UI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Hooks and Utilities**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [use-debounce](https://github.com/xnimorz/use-debounce) – Debounce a function call / state update
+
+**Code Quality**
+
+- [TypeScript](https://www.typescriptlang.org/) – Static type checker for end-to-end typesafety
+- [Prettier](https://prettier.io/) – Opinionated code formatter for consistent code style
+- [ESLint](https://eslint.org/) – Pluggable linter for Next.js and TypeScript

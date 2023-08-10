@@ -12,7 +12,7 @@ export const POST = async (req: any) => {
 
     if (search === "") {
       count = await Post.countDocuments();
-      posts = await Post.find().sort({ createdAt: -1 }).skip(0).limit(perPage).populate("creator");
+      posts = await Post.find().skip(0).limit(perPage).sort({ createdAt: -1 }).populate("creator");
     } else {
       const regexSearch = { $regex: search, $options: "i" };
 

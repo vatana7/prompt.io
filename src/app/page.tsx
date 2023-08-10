@@ -16,7 +16,7 @@ const Home = () => {
   const search = useDebouncedCallback(async (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
     await getFeeds(e.target.value);
-  }, 500);
+  }, 200);
 
   const getFeeds = async (search: string = "") => {
     try {
