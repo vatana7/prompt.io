@@ -11,7 +11,7 @@ interface FeedProps {
   prompts: any;
 }
 
-const Feed = ({ isUser, loading, prompts }: FeedProps) => {
+const Feed = ({ loading, prompts }: FeedProps) => {
   return (
     <>
       <div className="flex flex-col sm:flex-row flex-wrap container w-full">
@@ -22,7 +22,7 @@ const Feed = ({ isUser, loading, prompts }: FeedProps) => {
                 {prompts?.map((prompt: any) => {
                   return (
                     <div key={prompt._id} className="w-full md:w-1/2 lg:w-1/3">
-                      <PromptCard prompt={prompt} isUser={isUser} id={prompt._id} />
+                      <PromptCard prompt={prompt} id={prompt._id} />
                     </div>
                   );
                 })}

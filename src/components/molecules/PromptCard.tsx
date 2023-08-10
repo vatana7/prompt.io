@@ -1,12 +1,13 @@
 "use client";
 
-import CreatePost from "@/app/create/page";
+import React, { useState } from "react";
 import ClipboardIcon from "@/components/atoms/ClipboardIcon";
 import DeletePromptModal from "@/components/molecules/DeletePromptModal";
 import EditPromptModal from "@/components/molecules/EditPromptModal";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { If, Then } from "react-if";
+import { useSession } from "next-auth/react";
 
 interface PromptCardProps {
   prompt: {
@@ -22,9 +23,17 @@ interface PromptCardProps {
   id: string;
 }
 
-const PromptCard = ({ prompt, isUser = false, id }: PromptCardProps) => {
+const PromptCard = ({ prompt, id }: PromptCardProps) => {
   const { creator, tags, prompt: promptText } = prompt;
+  const { data: session } = useSession();
   const [copied, setCopied] = useState(false);
+
+  // Check if the user is on their own profile
+  const isUser =
+    session !== null &&
+    session !== undefined &&
+    window.location.pathname === "/profile" &&
+    window.location.search.split("=")[1] === session.user?.name?.replace(" ", "");
 
   const copyToClipboard = () => {
     setCopied(true);
@@ -70,7 +79,7 @@ const PromptCard = ({ prompt, isUser = false, id }: PromptCardProps) => {
           </div>
 
           {/* Prompt Body */}
-          <div className=" px-2 text-sm text-gray-600 h-[8rem] overflow-scroll break-words scroll-smooth">
+          <div className=" px-2 text-sm text-gray-600 h-[8rem] hide-scrollbar overflow-scroll break-words scroll-smooth">
             {promptText}
           </div>
           <div
@@ -101,7 +110,6 @@ const PromptCard = ({ prompt, isUser = false, id }: PromptCardProps) => {
               </label>
             </div>
           )}
-
           {/* Edit Prompt Modal */}
           <EditPromptModal id={id} prompt={prompt} />
 

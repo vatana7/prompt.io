@@ -17,6 +17,10 @@ const ProfilePage = () => {
   const [edit, setEdit] = useState(false);
 
   useEffect(() => {
+    if (window.location.pathname === "/profile" && window.location.search === "") {
+      return window.location.replace(`/`);
+    }
+
     const getFeeds = async () => {
       try {
         const username = window.location.search.split("=")[1];
@@ -63,7 +67,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </Then>
-      <Else>No Access</Else>
+      {/* <Else>No Access</Else> */}
     </If>
   );
 };
