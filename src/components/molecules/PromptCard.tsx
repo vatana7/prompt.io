@@ -79,7 +79,7 @@ const PromptCard = ({ prompt, id }: PromptCardProps) => {
           </div>
 
           {/* Prompt Body */}
-          <div className=" px-2 text-sm text-gray-600 h-[8rem] hide-scrollbar overflow-scroll break-words scroll-smooth">
+          <div className=" px-2 text-sm text-gray-600 h-[10rem] hide-scrollbar overflow-scroll break-words scroll-smooth">
             {promptText}
           </div>
           <div
