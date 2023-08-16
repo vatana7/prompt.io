@@ -1,12 +1,8 @@
 import { Post } from "@/models/post";
 import { User } from "@/models/user"; // Import the User model
 import { connectToDB } from "@/utils/database";
-import { NextRequest } from "next/server";
 
-//Using Edge Function to connect to MongoDB to fasten response time
-export const runtime = "edge";
-
-export const POST = async (req: NextRequest) => {
+export const POST = async (req: any) => {
   const { perPage, search } = await req.json();
 
   try {
