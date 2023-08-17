@@ -39,6 +39,10 @@ Prompt.io is a place where people can upload and explore other people AI prompts
 
 - [use-debounce](https://github.com/xnimorz/use-debounce) – Debounce a function call / state update
 
+**Code Structure**
+
+- [React Atomic Design](https://danilowoz.com/blog/atomic-design-with-react) - Popularly known within the design world, Atomic Design helps to build consistent, solid and reusable design systems
+
 **Code Quality**
 
 - [TypeScript](https://www.typescriptlang.org/) – Static type checker for end-to-end typesafety
