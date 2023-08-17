@@ -1,4 +1,4 @@
-> _I have worked on this project on a short period of time so that I can learn about how NextJS work overall. It was a fun experience and I'm super happy with the result._
+> _I have worked on this project on a short period of time so that I can learn about how NextJS work overall. It was a fun experience and I'm super happy with the result. You might noticed a delayed response on initial load which may take from under 100ms to over 1s as stated in this [link](https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-1/#:~:text=According%20to%20an%20analysis%20of,ms%20to%20over%201%20second.) **due to Vercel's Serverless Function having to spin up for the first time (Cold Boot) because of inactive traffic of the website**._
 
 #### Introduction
 
@@ -32,7 +32,7 @@ Prompt.io is a place where people can upload and explore other people AI prompts
 - [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for rapid UI development
 - [DaisyUi](https://daisyui.com/) – Component library for Tailwind CSS
 - [React SVG Icon](https://reactsvgicons.com/) – Beautifully simple, pixel-perfect icons
-- [react-if] – Simple React component that makes if else statement on React component more readable
+- [react-if](https://www.npmjs.com/package/react-if) – Simple React component that makes if else statement on React component more readable
 - [react-content-loader](https://skeletonreact.com/) - SVG component to create placeholder loading, like Facebook cards loading or also known as skeleton UI
 
 **Hooks and Utilities**
