@@ -33,7 +33,7 @@ const PromptCard = ({ prompt, id }: PromptCardProps) => {
     session !== null &&
     session !== undefined &&
     window.location.pathname === "/profile" &&
-    window.location.search.split("=")[1] === session.user?.name?.replace(" ", "");
+    window.location.search.split("=")[1] === session.user?.name?.replace(" ", "").toLowerCase();
 
   const copyToClipboard = () => {
     setCopied(true);
